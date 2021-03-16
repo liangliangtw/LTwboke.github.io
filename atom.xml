@@ -112,13 +112,32 @@
   </entry>
   
   <entry>
+    <title>图片相关</title>
+    <link href="http://yoursite.com/2020/08/16/%E5%9B%BE%E7%89%87%E7%9B%B8%E5%85%B3/"/>
+    <id>http://yoursite.com/2020/08/16/%E5%9B%BE%E7%89%87%E7%9B%B8%E5%85%B3/</id>
+    <published>2020-08-16T06:37:11.000Z</published>
+    <updated>2021-03-16T06:52:33.968Z</updated>
+    
+    <content type="html"><![CDATA[<p>Css 笔记</p><a id="more"></a><p>图片相关</p><h1 id="关于图片"><a href="#关于图片" class="headerlink" title="关于图片"></a>关于图片</h1><p>在日常业务中,图片的存在是普遍存在的,关于图片的 css 处理也是需要注意些相关问题.</p><h1 id="定宽高"><a href="#定宽高" class="headerlink" title="定宽高"></a>定宽高</h1><p>图片定宽可以等比缩放,但是有时候给出的图片规格不规范就会导致高度会完全展示出来导致布局不美观,所以一般会同时写上宽高,避免因为图片尺寸错误带来的布局问题：</p><pre><code class="css">img {  width: 100px;  height: 100px;}</code></pre><p>同时，给 <code>&lt;img&gt;</code> 标签同时写上高宽，可以在图片未加载之前提前占住位置，避免图片从未加载状态到渲染完成状态高宽变化引起的重排问题。</p><h2 id="定宽高比例不对会被拉伸"><a href="#定宽高比例不对会被拉伸" class="headerlink" title="定宽高比例不对会被拉伸"></a>定宽高比例不对会被拉伸</h2><p>限制高宽可能会出现问题，譬如图片被拉伸了，非常的难看.</p><p>这个时候，我们可以借助 <code>object-fit</code>，它能够指定可替换元素的内容（也就是图片）该如何适应它的父容器的高宽。</p><pre><code class="css">img {  width: 100px;  height: 100px;  object-fit: cover;}</code></pre><p>利用 object-fit: cover，使图片内容在保持其宽高比的同时填充元素的整个内容框。</p><p><code>object-fit</code> 还有一个配套属性 <code>object-position</code>，它可以控制图片在其内容框中的位置。（类似于 <code>background-position</code>）， 默认是 <code>object-position: 50% 50%</code>，如果你不希望图片居中展示，可以使用它去改变图片实际展示的 position 。</p><pre><code class="css">img {  width: 150px;  height: 100px;  object-fit: cover;  object-position: 50% 100%;}</code></pre>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;Css 笔记&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
     <title>watch与computed区别</title>
     <link href="http://yoursite.com/2020/05/05/watch%E4%B8%8Ecomputed%E5%8C%BA%E5%88%AB/"/>
     <id>http://yoursite.com/2020/05/05/watch%E4%B8%8Ecomputed%E5%8C%BA%E5%88%AB/</id>
     <published>2020-05-05T01:32:39.000Z</published>
-    <updated>2020-05-05T03:43:52.211Z</updated>
+    <updated>2021-03-16T03:12:23.541Z</updated>
     
-    <content type="html"><![CDATA[<p>记录 watch 与 computed 中详细的区别</p><a id="more"></a><h1 id="特别申明"><a href="#特别申明" class="headerlink" title="特别申明"></a>特别申明</h1><p>此文转载于 Timothy 博客</p><h1 id="About-Computed"><a href="#About-Computed" class="headerlink" title="About Computed"></a>About Computed</h1><ul><li>支持缓存，只有依赖数据发生改变，才会重新进行计算</li><li>不支持异步，当 computed 内有异步操作时无效，无法监听数据的变化</li><li>computed 属性值会默认走缓存，计算属性是基于它们的响应式依赖进行缓存的，也就是基于 data 中声明过或者父组件传递的 props 中的数据通过计算得到的值</li><li>如果一个属性是由其他属性计算而来的，这个属性依赖其他属性，是一个多对一或者一对一，一般用 computed</li><li>如果 computed 属性属性值是函数，那么默认会走 get 方法；函数的返回值就是属性的属性值；在 computed 中的，属性都有一个 get 和一个 set 方法，当数据变化时，调用 set 方法。</li></ul><p><img src="/img/computedimg.png" srcset="/img/loading.gif" alt=""></p><h1 id="About-Watch"><a href="#About-Watch" class="headerlink" title="About Watch:"></a>About Watch:</h1><ul><li>不支持缓存，数据变，直接会触发相应的操作</li><li>watch 支持异步； 3.监听的函数接收两个参数，第一个参数是最新的值；第二个参数是输入之前的值</li><li>当一个属性发生变化时，需要执行对应的操作；一对多；</li><li>监听数据必须是 data 中声明过或者父组件传递过来的 props 中的数据，当数据变化时，触发其他操作，函数有两个参数，<br>　　 immediate：组件加载立即触发回调函数执行，<br>　　 deep: 深度监听，为了发现对象内部值的变化，复杂类型的数据时使用，例如数组中的对象内容的改变，注意监听数组的变动不需要这么做。注意：deep 无法监听到数组的变动和对象的新增，参考 vue 数组变异,只有以响应式的方式触发才会被监听到。<br><img src="/img/watchone.png" srcset="/img/loading.gif" alt=""></li></ul><p>监听的对象也可以写成字符串的形式</p><p><img src="/img/watchtwo.png" srcset="/img/loading.gif" alt=""></p>]]></content>
+    <content type="html"><![CDATA[<p>记录 watch 与 computed 中详细的区别</p><a id="more"></a><h1 id="特别申明"><a href="#特别申明" class="headerlink" title="特别申明"></a>特别申明</h1><div class="note note-warning">            <p>本文转载于网上文章，版权归原作者所有。</p><p>本文原作者: Timothy</p>          </div><h1 id="About-Computed"><a href="#About-Computed" class="headerlink" title="About Computed"></a>About Computed</h1><ul><li>支持缓存，只有依赖数据发生改变，才会重新进行计算</li><li>不支持异步，当 computed 内有异步操作时无效，无法监听数据的变化</li><li>computed 属性值会默认走缓存，计算属性是基于它们的响应式依赖进行缓存的，也就是基于 data 中声明过或者父组件传递的 props 中的数据通过计算得到的值</li><li>如果一个属性是由其他属性计算而来的，这个属性依赖其他属性，是一个多对一或者一对一，一般用 computed</li><li>如果 computed 属性属性值是函数，那么默认会走 get 方法；函数的返回值就是属性的属性值；在 computed 中的，属性都有一个 get 和一个 set 方法，当数据变化时，调用 set 方法。</li></ul><p><img src="/img/computedimg.png" srcset="/img/loading.gif" alt=""></p><h1 id="About-Watch"><a href="#About-Watch" class="headerlink" title="About Watch:"></a>About Watch:</h1><ul><li>不支持缓存，数据变，直接会触发相应的操作</li><li>watch 支持异步； 3.监听的函数接收两个参数，第一个参数是最新的值；第二个参数是输入之前的值</li><li>当一个属性发生变化时，需要执行对应的操作；一对多；</li><li>监听数据必须是 data 中声明过或者父组件传递过来的 props 中的数据，当数据变化时，触发其他操作，函数有两个参数，<br>　　 immediate：组件加载立即触发回调函数执行，<br>　　 deep: 深度监听，为了发现对象内部值的变化，复杂类型的数据时使用，例如数组中的对象内容的改变，注意监听数组的变动不需要这么做。注意：deep 无法监听到数组的变动和对象的新增，参考 vue 数组变异,只有以响应式的方式触发才会被监听到。<br><img src="/img/watchone.png" srcset="/img/loading.gif" alt=""></li></ul><p>监听的对象也可以写成字符串的形式</p><p><img src="/img/watchtwo.png" srcset="/img/loading.gif" alt=""></p>]]></content>
     
     
     <summary type="html">&lt;p&gt;记录 watch 与 computed 中详细的区别&lt;/p&gt;</summary>
@@ -171,7 +190,7 @@
     <link href="http://yoursite.com/2020/04/12/%E5%89%8D%E8%A8%80/"/>
     <id>http://yoursite.com/2020/04/12/%E5%89%8D%E8%A8%80/</id>
     <published>2020-04-12T09:06:57.000Z</published>
-    <updated>2020-04-23T06:12:59.861Z</updated>
+    <updated>2021-03-16T02:46:33.169Z</updated>
     
     <content type="html"><![CDATA[<p>绞尽脑汁也没吐出几个有文化的字体,还是得多看点书充充墨。</p><a id="more"></a><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul><li>本博客由 <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a> 强力驱动，部署在 GitHub 上。</li><li>在此致谢 <a href="https://hexo.fluid-dev.com/docs/" target="_blank" rel="noopener">Fluid</a> 主题的作者。</li></ul><p>建立博客也有一段时间了，恰逢手上还有一些项目赶着要完成，没有过多的时间来总结下之前项目遇到的问题，个人拖延症还是蛮严重的，总想着晚些再处理，拖着拖着就不了了之。</p><p>当初建立这个博客就是为了记录所遇到技术上的启发以及记录相关的笔记，以得到技术上更好的提升，在各类大平台看到大佬写文章总是有种慕名的感觉，为啥他们能够如此深入的理解相关的机制和原理，大概也是熟能生巧吧，借此前言，希望以后的道路能够一帆风顺，不奢求能改变世界，首先让技术改变自己。</p>]]></content>
     
