@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-03-15T08:02:35.074Z</updated>
+  <updated>2022-02-18T10:49:46.754Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,12 +21,12 @@
     <link href="http://yoursite.com/2021/03/15/el%E8%A1%A8%E5%8D%95%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/"/>
     <id>http://yoursite.com/2021/03/15/el%E8%A1%A8%E5%8D%95%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/</id>
     <published>2021-03-15T07:50:30.000Z</published>
-    <updated>2021-03-15T08:02:35.074Z</updated>
+    <updated>2022-02-18T10:49:46.754Z</updated>
     
-    <content type="html"><![CDATA[<p>el 表单 条件判断失效的解决办法。</p><a id="more"></a><h1 id="BUG-重现"><a href="#BUG-重现" class="headerlink" title="BUG 重现"></a>BUG 重现</h1><p>Element UI 是比较常见的 UI 库了,当然遇到的问题还是比较多,今天遇到一个需求时候发现了一个问题.<br>例如表单存在条件判断(用 v-if),符合条件渲染时候会导致验证失效.<br>找原因的时候切换为使用(v-show),是可以解决这个 bug,但是同时会导致一个隐藏的问题–想要隐藏的 el-form-item 会因为触发验证导致不通过.</p><h1 id="网上的解决方法"><a href="#网上的解决方法" class="headerlink" title="网上的解决方法:"></a>网上的解决方法:</h1><p>1.在 v-if 的元素(如 div 等)上加上 key 值<br>2.v-if 改为 v-show<br>3.el-form-item 标签前加一个 div</p><h1 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h1><p>第一和第二种都不太符合我的需求,第三种亲测有效.</p>]]></content>
+    <content type="html"><![CDATA[<p>测试一下<br>el 表单 条件判断失效的解决办法。</p><a id="more"></a><h1 id="BUG-重现"><a href="#BUG-重现" class="headerlink" title="BUG 重现"></a>BUG 重现</h1><p>Element UI 是比较常见的 UI 库了,当然遇到的问题还是比较多,今天遇到一个需求时候发现了一个问题.<br>例如表单存在条件判断(用 v-if),符合条件渲染时候会导致验证失效.<br>找原因的时候切换为使用(v-show),是可以解决这个 bug,但是同时会导致一个隐藏的问题–想要隐藏的 el-form-item 会因为触发验证导致不通过.</p><h1 id="网上的解决方法"><a href="#网上的解决方法" class="headerlink" title="网上的解决方法:"></a>网上的解决方法:</h1><p>1.在 v-if 的元素(如 div 等)上加上 key 值<br>2.v-if 改为 v-show<br>3.el-form-item 标签前加一个 div</p><h1 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h1><p>第一和第二种都不太符合我的需求,第三种亲测有效.</p>]]></content>
     
     
-    <summary type="html">&lt;p&gt;el 表单 条件判断失效的解决办法。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;测试一下&lt;br&gt;el 表单 条件判断失效的解决办法。&lt;/p&gt;</summary>
     
     
     
@@ -116,9 +116,9 @@
     <link href="http://yoursite.com/2020/08/16/%E5%9B%BE%E7%89%87%E7%9B%B8%E5%85%B3/"/>
     <id>http://yoursite.com/2020/08/16/%E5%9B%BE%E7%89%87%E7%9B%B8%E5%85%B3/</id>
     <published>2020-08-16T06:37:11.000Z</published>
-    <updated>2022-02-18T10:44:21.269Z</updated>
+    <updated>2022-02-18T10:48:15.015Z</updated>
     
-    <content type="html"><![CDATA[<p>Css 笔记</p><a id="more"></a><p>图片相关</p><h1 id="关于图片"><a href="#关于图片" class="headerlink" title="关于图片"></a>关于图片</h1><p>在日常业务中,图片的存在是普遍存在的,关于图片的 css 处理也是需要注意些相关问题(再测试一下).</p><h1 id="定宽高"><a href="#定宽高" class="headerlink" title="定宽高"></a>定宽高</h1><p>图片定宽可以等比缩放,但是有时候给出的图片规格不规范就会导致高度会完全展示出来导致布局不美观,所以一般会同时写上宽高,避免因为图片尺寸错误带来的布局问题：</p><pre><code class="css">img {  width: 100px;  height: 100px;}</code></pre><p>同时，给 <code>&lt;img&gt;</code> 标签同时写上高宽，可以在图片未加载之前提前占住位置，避免图片从未加载状态到渲染完成状态高宽变化引起的重排问题。</p><h2 id="定宽高比例不对会被拉伸"><a href="#定宽高比例不对会被拉伸" class="headerlink" title="定宽高比例不对会被拉伸"></a>定宽高比例不对会被拉伸</h2><p>限制高宽可能会出现问题，譬如图片被拉伸了，非常的难看.</p><p>这个时候，我们可以借助 <code>object-fit</code>，它能够指定可替换元素的内容（也就是图片）该如何适应它的父容器的高宽。</p><pre><code class="css">img {  width: 100px;  height: 100px;  object-fit: cover;}</code></pre><p>利用 object-fit: cover，使图片内容在保持其宽高比的同时填充元素的整个内容框。</p><p><code>object-fit</code> 还有一个配套属性 <code>object-position</code>，它可以控制图片在其内容框中的位置。（类似于 <code>background-position</code>）， 默认是 <code>object-position: 50% 50%</code>，如果你不希望图片居中展示，可以使用它去改变图片实际展示的 position 。</p><pre><code class="css">img {  width: 150px;  height: 100px;  object-fit: cover;  object-position: 50% 100%;}</code></pre>]]></content>
+    <content type="html"><![CDATA[<p>Css 笔记</p><a id="more"></a><p>图片相关</p><h1 id="关于图片"><a href="#关于图片" class="headerlink" title="关于图片"></a>关于图片</h1><p>在日常业务中,图片的存在是普遍存在的,关于图片的 css 处理也是需要注意些相关问题.</p><h1 id="定宽高"><a href="#定宽高" class="headerlink" title="定宽高"></a>定宽高</h1><p>图片定宽可以等比缩放,但是有时候给出的图片规格不规范就会导致高度会完全展示出来导致布局不美观,所以一般会同时写上宽高,避免因为图片尺寸错误带来的布局问题：</p><pre><code class="css">img {  width: 100px;  height: 100px;}</code></pre><p>同时，给 <code>&lt;img&gt;</code> 标签同时写上高宽，可以在图片未加载之前提前占住位置，避免图片从未加载状态到渲染完成状态高宽变化引起的重排问题。</p><h2 id="定宽高比例不对会被拉伸"><a href="#定宽高比例不对会被拉伸" class="headerlink" title="定宽高比例不对会被拉伸"></a>定宽高比例不对会被拉伸</h2><p>限制高宽可能会出现问题，譬如图片被拉伸了，非常的难看.</p><p>这个时候，我们可以借助 <code>object-fit</code>，它能够指定可替换元素的内容（也就是图片）该如何适应它的父容器的高宽。</p><pre><code class="css">img {  width: 100px;  height: 100px;  object-fit: cover;}</code></pre><p>利用 object-fit: cover，使图片内容在保持其宽高比的同时填充元素的整个内容框。</p><p><code>object-fit</code> 还有一个配套属性 <code>object-position</code>，它可以控制图片在其内容框中的位置。（类似于 <code>background-position</code>）， 默认是 <code>object-position: 50% 50%</code>，如果你不希望图片居中展示，可以使用它去改变图片实际展示的 position 。</p><pre><code class="css">img {  width: 150px;  height: 100px;  object-fit: cover;  object-position: 50% 100%;}</code></pre>]]></content>
     
     
     <summary type="html">&lt;p&gt;Css 笔记&lt;/p&gt;</summary>
@@ -190,7 +190,7 @@
     <link href="http://yoursite.com/2020/04/12/%E5%89%8D%E8%A8%80/"/>
     <id>http://yoursite.com/2020/04/12/%E5%89%8D%E8%A8%80/</id>
     <published>2020-04-12T09:06:57.000Z</published>
-    <updated>2021-03-16T02:46:33.169Z</updated>
+    <updated>2022-02-18T10:49:32.504Z</updated>
     
     <content type="html"><![CDATA[<p>绞尽脑汁也没吐出几个有文化的字体,还是得多看点书充充墨。</p><a id="more"></a><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul><li>本博客由 <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a> 强力驱动，部署在 GitHub 上。</li><li>在此致谢 <a href="https://hexo.fluid-dev.com/docs/" target="_blank" rel="noopener">Fluid</a> 主题的作者。</li></ul><p>建立博客也有一段时间了，恰逢手上还有一些项目赶着要完成，没有过多的时间来总结下之前项目遇到的问题，个人拖延症还是蛮严重的，总想着晚些再处理，拖着拖着就不了了之。</p><p>当初建立这个博客就是为了记录所遇到技术上的启发以及记录相关的笔记，以得到技术上更好的提升，在各类大平台看到大佬写文章总是有种慕名的感觉，为啥他们能够如此深入的理解相关的机制和原理，大概也是熟能生巧吧，借此前言，希望以后的道路能够一帆风顺，不奢求能改变世界，首先让技术改变自己。</p>]]></content>
     
