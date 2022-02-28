@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2022-02-28T03:07:09.342Z</updated>
+  <updated>2022-02-28T03:08:57.666Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,12 +21,12 @@
     <link href="http://yoursite.com/2021/03/15/el%E8%A1%A8%E5%8D%95%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/"/>
     <id>http://yoursite.com/2021/03/15/el%E8%A1%A8%E5%8D%95%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/</id>
     <published>2021-03-15T07:50:30.000Z</published>
-    <updated>2022-02-28T03:07:09.342Z</updated>
+    <updated>2022-02-28T03:08:57.666Z</updated>
     
-    <content type="html"><![CDATA[<p>表单测试更新<br>el 表单 条件判断失效的解决办法。</p><a id="more"></a><h1 id="BUG-重现"><a href="#BUG-重现" class="headerlink" title="BUG 重现"></a>BUG 重现</h1><p>Element UI 是比较常见的 UI 库了,当然遇到的问题还是比较多,今天遇到一个需求时候发现了一个问题.<br>例如表单存在条件判断(用 v-if),符合条件渲染时候会导致验证失效.<br>找原因的时候切换为使用(v-show),是可以解决这个 bug,但是同时会导致一个隐藏的问题–想要隐藏的 el-form-item 会因为触发验证导致不通过.</p><h1 id="网上的解决方法"><a href="#网上的解决方法" class="headerlink" title="网上的解决方法:"></a>网上的解决方法:</h1><p>1.在 v-if 的元素(如 div 等)上加上 key 值<br>2.v-if 改为 v-show<br>3.el-form-item 标签前加一个 div</p><h1 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h1><p>第一和第二种都不太符合我的需求,第三种亲测有效.</p>]]></content>
+    <content type="html"><![CDATA[<p>el 表单 条件判断失效的解决办法。</p><a id="more"></a><h1 id="BUG-重现"><a href="#BUG-重现" class="headerlink" title="BUG 重现"></a>BUG 重现</h1><p>Element UI 是比较常见的 UI 库了,当然遇到的问题还是比较多,今天遇到一个需求时候发现了一个问题.<br>例如表单存在条件判断(用 v-if),符合条件渲染时候会导致验证失效.<br>找原因的时候切换为使用(v-show),是可以解决这个 bug,但是同时会导致一个隐藏的问题–想要隐藏的 el-form-item 会因为触发验证导致不通过.</p><h1 id="网上的解决方法"><a href="#网上的解决方法" class="headerlink" title="网上的解决方法:"></a>网上的解决方法:</h1><p>1.在 v-if 的元素(如 div 等)上加上 key 值<br>2.v-if 改为 v-show<br>3.el-form-item 标签前加一个 div</p><h1 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h1><p>第一和第二种都不太符合我的需求,第三种亲测有效.</p>]]></content>
     
     
-    <summary type="html">&lt;p&gt;表单测试更新&lt;br&gt;el 表单 条件判断失效的解决办法。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;el 表单 条件判断失效的解决办法。&lt;/p&gt;</summary>
     
     
     
